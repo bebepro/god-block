@@ -1,39 +1,30 @@
-local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-function hVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn(data) m=string.sub(data, 0, 55) data=data:gsub(m,'')
-
-data = string.gsub(data, '[^'..b..'=]', '') return (data:gsub('.', function(x) if (x == '=') then return '' end local r,f='',(b:find(x)-1) for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end return r; end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x) if (#x ~= 8) then return '' end local c=0 for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end return string.char(c) end)) end
-
-
- 
-
-
-local UserInputService = game:GetService(hVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('SyVeUJznUBzYbmnLNSDRTxdDFUMnQTTibrwlOSjXnbQjIuCynEMnqEcVXNlcklucHV0U2VydmljZQ=='))
+local UserInputService = game:GetService("UserInputService")
 local isPressing = false  -- Flag to control the key pressing state
 
--- Function to simulate pressing hVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('uvjnHlzMzHQdAEygDHVLAxiboFGFsgpviFCXrUInzYtKtsTxPvCnUSGRg==')
+-- Function to simulate pressing "F"
 local function pressF()
-	while isPressing do
-		-- Fire the InputBegan event to simulate key press
-		UserInputService.InputBegan:Fire({
-			UserInputType = Enum.UserInputType.Keyboard,
-			KeyCode = Enum.KeyCode.F
-		})
-
-		-- Adjust the wait time for how fast hVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('rfEUjEVeFpzwCHXGqVhnrwgFCLYuOVBvIccaggHhgtmRwQWtvHJRrcKRg==') is pressed
-		wait(0.1)  -- Press every 0.1 seconds
-	end
+    while isPressing do
+        -- Fire the InputBegan event to simulate key press
+        UserInputService.InputBegan:Fire({
+            UserInputType = Enum.UserInputType.Keyboard,
+            KeyCode = Enum.KeyCode.F
+        })
+        
+        -- Adjust the wait time for how fast "F" is pressed
+        wait(0.1)  -- Press every 0.1 seconds
+    end
 end
 
--- Function to toggle the pressing of hVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('RFPcFaugoIIiLoZInWzFjbHUgAlPRGhfpqaGlFOuztoTwbCGYIeRcFURg==')
+-- Function to toggle the pressing of "F"
 local function togglePressing()
-	isPressing = not isPressing  -- Toggle the state
-	if isPressing then
-		print(hVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('PoTYcFjWDTFCLoEKfqOPgOHrrTPfLhYqgZJwHaMZwulfYnMaojTvfTTUHJlc3Npbmcg')FhVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('CBhmJZBdoqODBlsIfRjYiOlpxNCztAYCkYFISWoWloXsXWdSRgprpiGIHN0YXJ0ZWQ='))
-		pressF()  -- Start pressing hVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('pJQoPCQLnZMrimXbfLwKEbjELkCVNaXLkQZMLDklqnjsQclBSxNFADURg==')
-	else
-		print(hVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('dhsPQtUHzNyIRPAZGFLJkaqOXTaYjwvQRgfQjKPAAcLYnErMexicfjtUHJlc3Npbmcg')FhVmZCwfopcpocactXkyoKLZeUJwQGUVvTYPUKOPVMlVzBXexjuuBNEUDzhNAltvGHqRcIPEvZrn('qoPlarwRvfNdVUkFCiKXXMutPYlpEbzZUfTuGTezcbRxXbozVdGUSuwIHN0b3BwZWQ='))
-	end
+    isPressing = not isPressing  -- Toggle the state
+    if isPressing then
+        print("Pressing 'F' started")
+        pressF()  -- Start pressing "F"
+    else
+        print("Pressing 'F' stopped")
+    end
 end
 
 -- Connect the button click to the toggle function
-script.Parent.MouseButton1Click:Connect(togglePressing)    
+script.Parent.MouseButton1Click:Connect(togglePressing)
